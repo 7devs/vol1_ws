@@ -29,11 +29,11 @@ false
 typeof() 查看数据类型
 隐形
 
-逻辑运算：
+###逻辑运算：
   and（&&）
   OR（||)
   NOT(!)
- 三元运算：
+###三元运算：
   boolean ? ifture:iffalse
  a = 1, b = 2, c = 3, d = 4;
 
