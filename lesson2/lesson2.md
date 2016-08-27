@@ -1,11 +1,13 @@
 #lesson02:javascriptj基础
 
-开发者工具：F12或command＋option＋I（mac）
+##开发者工具
+F12或command＋option＋I（mac）
 
 alert(“Hello world”);
 
-变量
+##变量
 
+##运算符
 运算符：a++（a--） 与 ++a(—a) 的返回值不同；
      a = 3
      a++ (此时，a=4，返回值为3)
