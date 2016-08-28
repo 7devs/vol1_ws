@@ -1,4 +1,5 @@
-#lesson02:javascriptj基础
+#lesson02:JavaScript基础
+时间：2016-08-27 13:00~16:00
 
 ##开发者工具
 F12或command＋option＋I（mac）
