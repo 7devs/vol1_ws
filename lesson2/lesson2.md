@@ -19,14 +19,14 @@ alert(“Hello world”);
 ```
 运算符：==（仅判断“值”）与===（还判断“类型”）
 ```
-num = 2
-2
-str = "2"
-"2"
-num == str
-true
-num === str
-false
+    num = 2
+    2
+    str = "2"
+    "2"
+    num == str
+    true
+    num === str
+    false
 ```
 尽量使用 == 做判断；
 
@@ -40,13 +40,13 @@ typeof() 查看数据类型
 ###三元运算：
   boolean ? ifture:iffalse
 ```
- a = 1, b = 2, c = 3, d = 4;
-“if(a>b){
-1
-} else {
-2
-}”
-2
-a > b ? 1 : 2;
-2    
+    a = 1, b = 2, c = 3, d = 4;
+    “if(a>b){
+    1
+    } else {
+    2
+    }”
+    2
+    a > b ? 1 : 2;
+    2    
 ```
