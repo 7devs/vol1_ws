@@ -41,11 +41,11 @@ typeof() 查看数据类型
   boolean ? ifture:iffalse
 ```
     a = 1, b = 2, c = 3, d = 4;
-    “if(a>b){
+    if(a>b){
     1
     } else {
     2
-    }”
+    }
     2
     a > b ? 1 : 2;
     2    
