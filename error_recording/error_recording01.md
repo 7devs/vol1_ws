@@ -46,3 +46,45 @@ sleepCheck(10);
 sleepCheck(5);
 sleepCheck(8);
 ```   
+
+# No.003
+```
+//Rock paper scissors game
+//Rock paper scissors game
+var R = "rock";
+var S = "scissor";
+var P = "paper";
+var whoWin = function(user, computer) {
+
+    if (user === R) {
+        if (computer === R) {
+            return "No winner.";
+        } else if (computer === S) {
+            return "Winner is user."
+        }
+        else if (computer === P) {
+           return "Winner is computer."
+        }
+    } else if (user === S) {
+        if (computer === R) {
+            return "Winner is computerNo winner.";
+        }
+        else if (computer === S) {
+            return "No winner."
+        } else if (computer === P) {
+           return "Winner is user."
+        }
+    } else (user === P) {
+        if (computer === R) {
+            return "Winner is user.";
+        } else if (computer === S) {
+            return "Winner is computer."
+        } else if (computer === P) {
+           return "No winner."
+        }
+    }
+};
+```
+**ERROR**: `SyntaxError: Unexpected token {`  
+**CORRECT**: `} else (user === P) {` can be `} else if (user === P) {`.  
+	or it can be `} else {`
