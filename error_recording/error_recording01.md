@@ -1,6 +1,6 @@
-No.001
+# No.001
 ```
-vvar nameString = function (name) {
+var nameString = function (name) {
 	return "Hi, I am" + " " + name;
 };
 console.log(nameString(sen));
@@ -14,7 +14,7 @@ var nameString = function (name) {
 console.log(nameString("sen"));
 ```
 
-No.002
+# No.002
 ```
 var sleepCheck = function(numHours){
     if numHours >= 8 {
@@ -29,7 +29,7 @@ sleepCheck(5);
 sleepCheck(8);
 ```
 **ERROR**: `SyntaxError: Unexpected identifier`  
-**CORRECT**:
+**CORRECT**:  
 1. `condition` after `if` should be in the (). just like `(numHours >= 8)`.  
 2. there is no `;` after `if(...){...}` or `else {...}`.  
 3. put a `};` at the end of the function.  
