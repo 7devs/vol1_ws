@@ -132,3 +132,18 @@ var func4 = new Function(`return 3:`);
 function func5() {
     return 4;
 }
+
+```
+//class
+function Cat(name){
+    this.name = name;
+
+    this.getMyname = function(){
+        return this.name;
+    }
+
+    this.say = function() {
+        return 'Miao~~';
+    }
+}
+```
