@@ -33,5 +33,5 @@ var snoopy = {
     age: 10
 };
 ```
-**ERROR**: use comma `,`, not semi-colon`;   
+**ERROR**: use comma `,`, not semi-colon`;`    
 **CORRECT**:`species: "beagle",`   

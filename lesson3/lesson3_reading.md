@@ -82,4 +82,7 @@ var george = new Person("George Washington", 275);
 ```
 It means if we have many cats and wanted to create an object for each cat, we could just use this constructor with the properties already defined.
 
-This is much better than using the Object constructor which just gives us an empty object and needs us to define every property and value for each cat object we would create.
+This is much better than using the Object constructor which just gives us an empty object and needs us to define every property and value for each cat object we would create.   
+
+## Constructors With Methods   
+In addition to setting properties, constructors can also define methods. This way, as soon as the object is created it will have its own methods as well.  
