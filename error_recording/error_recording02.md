@@ -25,3 +25,13 @@ if(cat === 'mimi'){
     console.log('it is not a cat');
 };
 ```
+
+# No.004
+```
+var snoopy = {
+    species: "beagle"；
+    age: 10
+};
+```
+**ERROR**: use comma `,`, not semi-colon`;   
+**CORRECT**:`species: "beagle",`   
