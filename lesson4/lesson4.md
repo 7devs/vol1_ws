@@ -1,4 +1,5 @@
 # 对象
+2016-09-01
 ## 对象的概念
 * 类、子类
 * 继承
@@ -46,9 +47,24 @@ console.log(obj.walk(10));
 `getDate()` 返回1～31；
 `getDay()` 返回0~6;
 `getMonth()` 返回0～11；
+example:
+```
+var m = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Junly', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']   
+
+date = new Date()
+Thu Sep 01 2016 20:30:23 GMT+0800 (CST)
+
+date.getMonth()
+8
+
+console.log('This month is ' + m[date.getMonth()])
+This month is Sep
+```
 
 * RegExp
-与字符串相关的字符串类型的方法 `.replace()` `.search()`
+与字符串相关的字符串类型的方法 `.replace()` `.search()` `.match()`
+
+* Math
 
 # 待练习
 * 字符串的方法
