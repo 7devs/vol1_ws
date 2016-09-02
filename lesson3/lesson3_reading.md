@@ -86,3 +86,30 @@ This is much better than using the Object constructor which just gives us an emp
 
 ## Constructors With Methods   
 In addition to setting properties, constructors can also define methods. This way, as soon as the object is created it will have its own methods as well.  
+
+# Review
+
+## What Are Objects For?  
+Objects provide us with a way to represent real-world or virtual things. We can do this by storing information inside the object's properties.   
+There are two basic ways to make objects:  
+* Literal Notation, where we use:
+`var Name = { };`  
+* Constructor Notation, where we use the keyword `new`.
+
+## properties   
+Properties are like variables that belong to an object, and are used to hold pieces of information. Properties can be accessed in two ways:  
+* Dot notation, with`ObjectName.PropertyName`  
+* Bracket notation, with 'ObjectName["PropertyName"]'
+
+## Customizing Constructors  
+These are helpful for two reasons:  
+1. We can assign our objects properties through parameters we pass in when the object is created.
+2. We can give our objects methods automatically.  
+These both work to save us time and lines of code when we make objects.
+
+## Methods
+**Methods** are like functions that are associated with a particular object.  
+They are especially helpful when you want to either:
+1. Update the object properties  
+2. Calculate something based on an object's properties.
+3. 
