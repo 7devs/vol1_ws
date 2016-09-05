@@ -3,10 +3,10 @@
 var contacts = new array("Bob", "Mary");
 ```
 
-**ERROR**:
+**ERROR**:  
 `Uncaught ReferenceError: array is not defined`
 
-**CORRECT**:
+**CORRECT**:  
 check the `array ` should be `Array`  
 ```
 var contacts = new Array("Bob", "Mary");
@@ -16,7 +16,7 @@ OR, using an array literal is the easiest way to create a JavaScript array.
 var contacts = ["Bob", "Mary"];
 ```
 
-**BESIDES**
+**BESIDES**:  
 Can arrays be compared in JavaScript?
 ```
 [1, 2] === [1, 2];
