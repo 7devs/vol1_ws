@@ -112,4 +112,5 @@ These both work to save us time and lines of code when we make objects.
 They are especially helpful when you want to either:
 1. Update the object properties  
 2. Calculate something based on an object's properties.
-3. 
+
+every object in JavaScript comes with some baggage (stay tuned for more on this!). Part of this baggage includes a method called `hasOwnProperty`. This lets us know if an object has a particular property.
