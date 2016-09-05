@@ -16,4 +16,4 @@ arr1;
 ```
 
 ##:数组可以进行比较吗？如何比较？  
-见(How to compare arrays in JavaScript? )[http://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript]
+见[How to compare arrays in JavaScript? ] (http://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript)
