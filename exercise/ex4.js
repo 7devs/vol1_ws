@@ -1,4 +1,4 @@
-//Building an Address Book. From:https://www.codecademy.com/courses/building-an-address-book
+//Build an Address Book. From:https://www.codecademy.com/courses/building-an-address-book
 var bob = {
     firstName: "Bob",
     lastName: "Jones",
