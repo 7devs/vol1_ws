@@ -1,6 +1,5 @@
 var app = require('express')(),
-    bodyParser = require('body-parser'),
-    tool = require('./lib/tool.js');
+    bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({
     extended: false
