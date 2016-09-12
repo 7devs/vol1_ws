@@ -4,12 +4,12 @@ var router = require('express').Router() //引入Express的路由处理
 // debug
 console.log('Router is in...1')
 
-router.route('/news')
+router.route('/')
     .get(function(req, res, next) {
         res.status(200).send(userModel);
     });
 
-router.route('/news/:id')
+router.route('/:id')
     .get(function(req, res, next) {
         var id = parseInt(req.params.id, 10);
         //console.log(typeof(id), id);
@@ -22,7 +22,7 @@ router.route('/news/:id')
 
     });
 
-router.route('/news/:id')
+router.route('/:id')
      .delete(function(req, res, next) {
         var id = parseInt(req.params.id, 10);
         //console.log(typeof(id), id);

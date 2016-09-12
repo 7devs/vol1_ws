@@ -21,9 +21,5 @@ app.use('/*', function(req, res, next) {
 });
 
 app.listen(3000, function(){
-    tool.printLine();
-    tool.printDate();
-    tool.printLine();
     console.log('this is an exercise of Lesson6.');
-    tool.printLine();
 });
