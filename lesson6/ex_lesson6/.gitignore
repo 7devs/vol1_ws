@@ -1,4 +1,4 @@
 node_modules
 lib/.DS_Store
-DS_Store
-models/.DS_Store
+.DS_Store
+lib/models/.DS_Store
