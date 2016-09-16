@@ -1,13 +1,16 @@
 
-##时间记录  
+#时间记录  
 
 | 日期 | 用时 | 说明 |
 | ---- | ---- | ---- |
 | 20160914 | 30min | 搭建项目与框架 |
-| 20160915 | 3.5h  |   ｜
-| 20160915 | 2h | 完成 GET ／user 模块 ｜
-| 20160916 | 2h15min | 完成 GET ／album 模块 ｜
+| 20160915 | 3.5h  |   |
+| 20160915 | 2h | 完成 GET ／user 模块 |
+| 20160916 | 2h15min | 完成 GET ／album 模块 |
 
+---
+
+#要点记录
 ##`req.query`
 
 [参考文档](http://expressjs.com/zh-cn/api.html#app.route)
@@ -59,8 +62,8 @@ fruits.push("Kiwi");       //  Adds a new element ("Kiwi") to fruits
 ```
 其他 `Array` 的方法[参考文档](http://www.w3schools.com/js/js_array_methods.asp) 。
 
-##Errors
-###未开放自定义的包，导致引入时报错
+#Errors记录
+##未开放自定义的包，导致引入时报错
 
 错误信息：
 ```
