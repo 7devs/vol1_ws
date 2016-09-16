@@ -62,6 +62,8 @@ fruits.push("Kiwi");       //  Adds a new element ("Kiwi") to fruits
 ```
 其他 `Array` 的方法[参考文档](http://www.w3schools.com/js/js_array_methods.asp) 。
 
+---
+
 #Errors记录
 ##未开放自定义的包，导致引入时报错
 
