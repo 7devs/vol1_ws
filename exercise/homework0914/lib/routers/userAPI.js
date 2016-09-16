@@ -3,6 +3,7 @@ var router = require('express').Router(),
 //引入路由数据变量，载入自定义数据模型
     userModel = require('../models/users.js');
 
+//GET / 返回全部唱片
 router.route('/')
     .get(function(req, res, next) {
         res.status(200).send(userModel);

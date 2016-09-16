@@ -10,9 +10,9 @@ app.use(bodyParser.urlencoded({
 
 //路由表
 app.use('/user', require('./lib/routers/userAPI'));
-//app.use('/album', require('./lib/routers/albumAPI'));
+app.use('/album', require('./lib/routers/albumAPI'));
 app.use('/*', function(request, response, next) {
-    response.status(400).send('Not Found! ' + 'Welcome to Homework0914! \n ' +"The time is " + Date());
+    response.status(400).send('Not Found!\n ' + 'Welcome to Homework0914!\n ' +"The time is " + Date());
 });
 
 
