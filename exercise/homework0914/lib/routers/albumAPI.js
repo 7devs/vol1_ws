@@ -18,7 +18,7 @@ router.route('/longerSong')
                 song3List.push(albumModel[i].title)
             }
         }
-    res.status(200).send('the longerSongs are: ' + song3List);
+    res.status(200).send(song3List);
     })
 
 //返回指定歌手的全部歌曲
@@ -38,7 +38,7 @@ router.route('/singer/:name')
 
         //如果歌手不存在，返回 Not Found
         if (titleList.length > 0 ) {
-            res.status(200).send(singerSearch + '\'s songs are: ' + titleList);
+            res.status(200).send(titleList);
         } else {
             res.status(404).send('Not Found.');
         }
@@ -59,7 +59,6 @@ router.route('/search')
                 songList.push(albumModel[i]);
             }
         }
-
         //如果指定type的歌曲不存在，返回 Not Found
         if (songList.length > 0 ) {
             res.status(200).send(songList);
@@ -68,7 +67,6 @@ router.route('/search')
         }
 
       })
-
 
 //得到指定 id 的 唱片数据 ，并返回
 router.route('/:id')
@@ -83,8 +81,19 @@ router.route('/:id')
         }
     })
 
-
-
+//修改指定 唱片 的时长 length 和 标题 title，返回修改后的结果
+    .put(function(req, res, next) {
+        var id = req.params.id,
+            index = id - 1;
+        if(albumModel[index]) {
+            //获取表单中 length 和 title 输入的新值，并更新指定唱片的对应数据
+            albumModel[index].length = req.body.length;
+            albumModel[index].title = req.body.title;
+            res.status(200).send(albumModel[index]);
+        } else {
+            res.status(404).send('Not Found.');
+        }
+    })
 
 //对外开放 router 对象
 module.exports = router;

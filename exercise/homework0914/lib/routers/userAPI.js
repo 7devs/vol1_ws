@@ -9,7 +9,6 @@ router.route('/')
         res.status(200).send(userModel);
     });
 
-
 //获取指定性别的人数统计
 router.route('/count/:sex')
     .get(function(req, res, next) {
@@ -22,7 +21,7 @@ router.route('/count/:sex')
                 sexTotal++;
             }
         }
-    res.status(200).send('the Total ' + sex + ' is: ' + sexTotal);
+    res.status(200).send(sexTotal.toString());
     })
 
 //返回所有用户年龄平均值
@@ -38,10 +37,8 @@ router.route('/ageAvg')
             userNum ++;
             }
         ageAvg = ageTotal / userNum;
-    res.status(200).send('the Average age is: ' + ageAvg);
+    res.status(200).send(ageAvg.toString());
     })
-
-
 
 //返回符合 company 搜索条件的用户列表
 router.route('/search')
@@ -57,7 +54,6 @@ router.route('/search')
                 userList.push(userModel[i]);
             }
         }
-
         //如果用户不存在，返回 Not Found
         if (userList.length > 0 ) {
             res.status(200).send(userList);
@@ -67,7 +63,6 @@ router.route('/search')
 
       })
 
-
 //得到指定用户 id 的 lastName 和 lastName ，并返回
 router.route('/:id')
     .get(function(req, res, next) {
@@ -75,19 +70,31 @@ router.route('/:id')
         var id = req.params.id,
             index = id - 1;
         if(userModel[index]) {
-            res.status(200).send('firstName: ' + userModel[index].firstName
-                + '; ' + 'lastName: ' + userModel[index].lastName);
+            res.status(200).send(userModel[index].firstName
+                + " " + userModel[index].lastName);
         } else {
             res.status(404).send('Not Found.');
         }
     })
 
-
-/*
-.PUT
-*/
-
-
+//修改指定 id 的用户年龄 age，返回修改后的结果
+    .put(function(req, res, next) {
+        var id = req.params.id,
+            index = id - 1;
+        if(userModel[index]) {
+            //判断 age 是否为 数值型
+            //console.log(typeof(userModel[index].age));
+            if(typeof(userModel[index].age) === "number") {
+                //获取表单中request.body.age输入的新值，并更新指定用户的年龄age
+                userModel[index].age = req.body.age;
+                res.status(200).send(userModel[index]);
+            } else {
+                res.send("the type of 'age' is not 'number'!");
+            }
+        } else {
+            res.status(404).send('Not Found.');
+        }
+    })
 
 
 //对外开放 router 对象

@@ -7,6 +7,7 @@
 | 20160915 | 3.5h  |   |
 | 20160915 | 2h | 完成 GET ／user 模块 |
 | 20160916 | 2h15min | 完成 GET ／album 模块 |
+| 20160917 | 10:15- | |
 
 ---
 
@@ -62,6 +63,19 @@ fruits.push("Kiwi");       //  Adds a new element ("Kiwi") to fruits
 ```
 其他 `Array` 的方法[参考文档](http://www.w3schools.com/js/js_array_methods.asp) 。
 
+##使用 `PUT` 方法
+```
+PUT
+The PUT method requests that the enclosed entity be stored under the supplied URI. If the URI refers to an already existing resource, it is modified; if the URI does not point to an existing resource, then the server can create the resource with that URI.
+```
+使用 `PUT` 方法，可以将提交的表单中的数据，更新到源数据中。注意必须引入 `body-parser` 包。使用的参数举例如下：
+```
+dataBase.age = req.body.age;
+```
+
+>参考文档：
+* [Hypertext_Transfer_Protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol);
+* [Stack Overflow](http://stackoverflow.com/questions/25730777/put-route-with-node-js);
 ---
 
 #Errors记录
@@ -119,4 +133,27 @@ router.route('/:name')
 ```
 undefined
 ```
-将 `req.query.name` 改为 `req.params.name` , 测试结果。
+将 `req.query.name` 改为 `req.params.name` , 测试结果正常。
+
+## `res.sen` 返回的错误
+原代码：
+```
+res.status(200).send(sexTotal);
+//本例中，sexTotal === 5 (数值型)
+```
+由于返回的数据小于200（待核实），导致报错，错误信息：
+```
+express deprecated res.send(status): Use res.sendStatus(status) instead lib/routers/userAPI.js:24:21
+RangeError: Invalid status code: 5
+```
+将返回的 **字符型** 数据转化为 **数值型** ，更正代码：
+```
+res.status(200).send(sexTotal.toString());
+```
+浏览器返回正常。
+
+按照控制台的建议，采用 `res.send(status)` ，如：
+```
+res.sendStatus(200).send(sexTotal);
+```
+浏览器返回 `OK` 状态, 不再报错。 不过，不能返回数据。
