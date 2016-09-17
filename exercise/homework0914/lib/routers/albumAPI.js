@@ -15,7 +15,7 @@ router.route('/longerSong')
         var song3List = new Array();;
         for(var i = 0; i < albumModel.length; i++) {
             if(albumModel[i].length > 180) {
-                song3List.push(albumModel[i].title)
+                song3List.push(albumModel[i])
             }
         }
     res.status(200).send(song3List);
@@ -32,7 +32,7 @@ router.route('/singer/:name')
         //console.log(re);
         for(i = 0; i < albumModel.length; i++) {
             if(re.test(albumModel[i].singer) === true ) {
-                titleList.push(albumModel[i].title);
+                titleList.push(albumModel[i]);
             }
         }
 
@@ -49,8 +49,8 @@ router.route('/singer/:name')
 router.route('/search')
     .get(function(req, res, next) {
         var typeSearch = req.query.type,
-            //将搜索 字符串 转化为 RegExP,不区分大小写
-            re = new RegExp(typeSearch, "g"),
+            //将搜索 字符串 转化为 RegExP
+            re = new RegExp(typeSearch),
             songList = new Array();
         //console.log(typeSearch);
         //console.log(re);
@@ -73,7 +73,7 @@ router.route('/:id')
     .get(function(req, res, next) {
         var id = req.params.id,
             index = id - 1;
-        console.log(albumModel[index]);
+        //console.log(albumModel[index]);
         if(albumModel[index]) {
             res.status(200).send(albumModel[index]);
         } else {

@@ -7,8 +7,9 @@
 | 20160915 | 3.5h  |   |
 | 20160915 | 2h | 完成 GET ／user 模块 |
 | 20160916 | 2h15min | 完成 GET ／album 模块 |
-| 20160917 | 2h | 完成 PUT /user 和 PUT /album 及 fix bugs |
-| 历时4天 | 10h15min | Done! |
+| 20160917 | 2h | 完成 PUT /user 和 PUT /album 及 fixed bugs |
+| 20160917 | 15:15- | fixed bugs |
+| 历时4天 | 10h15min+ | Doing... |
 
 ---
 
@@ -94,7 +95,7 @@ TypeError: Router.use() requires middleware function but got a Object
 module.exports = router;
 ```
 
-###返回信息不符合要求 (**待解决**)
+##返回信息不符合要求 (**待解决**)
 
 代码如下：   
 ```
@@ -120,7 +121,7 @@ your search is: [object Object]
 { title: '私奔', type: '摇滚', length: 203, singer: '郑钧' }
 ```
 
-### `req.query` 和 `req.params`
+## `req.query` 和 `req.params`
 代码如下：
 ```
 //返回指定歌手的全部歌曲
@@ -158,3 +159,34 @@ res.status(200).send(sexTotal.toString());
 res.sendStatus(200).send(sexTotal);
 ```
 浏览器返回 `OK` 状态, 不再报错。 不过，不能返回数据。
+
+## 正则表达式 `RegExp` 参数的使用（原因待查）
+本例中，将待搜索的字符串转换为正则表达式的验证条件，原代码：
+```
+re = new RegExp(typeSearch, "g");
+console.log(albumModel[i].type, i);
+```
+输出：
+```
+$ node index.js
+Homework0914 is running...
+摇滚 0
+摇滚 5
+```
+结果仅返回 **两条** 数据，实际应该有 **四条** 符合。
+
+将转换代码中的参数 `"g"` 去掉后，即采用如下代码：
+```
+re = new RegExp(typeSearch);
+console.log(albumModel[i].type, i);
+```
+执行后，输出结果正常：
+```
+$ node index.js
+Homework0914 is running...
+摇滚 0
+摇滚 1
+摇滚 5
+摇滚 6
+```
+原因待查。而且该问题不是总能重现，当搜索“摇滚”时出现结果少的问题，而搜索“民谣”时，返回结果是正常的。
