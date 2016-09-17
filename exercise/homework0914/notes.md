@@ -8,6 +8,7 @@
 | 20160915 | 2h | 完成 GET ／user 模块 |
 | 20160916 | 2h15min | 完成 GET ／album 模块 |
 | 20160917 | 2h | 完成 PUT /user 和 PUT /album 及 fix bugs |
+| 历时4天 | 10h15min | Done! |
 
 ---
 
