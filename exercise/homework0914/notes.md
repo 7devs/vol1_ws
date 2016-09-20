@@ -121,6 +121,14 @@ your search is: [object Object]
 ```
 { title: '私奔', type: '摇滚', length: 203, singer: '郑钧' }
 ```
+**原因**:
+Express包的`res.send();`方法自动根据Header头信息，自动将()中内容转换为JSON或字符串。
+
+**解决**:利用 字符串与对象 互为转换的方法：  
+JSON.stringify(obj);
+JSON.parse(string);
+详细用法，见[JSON Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)。
+
 
 ## `req.query` 和 `req.params`
 代码如下：
@@ -144,7 +152,7 @@ undefined
 res.status(200).send(sexTotal);
 //本例中，sexTotal === 5 (数值型)
 ```
-由于返回的数据小于200（待核实），导致报错，错误信息：
+由于返回的数据小于100（待核实），导致报错，错误信息：
 ```
 express deprecated res.send(status): Use res.sendStatus(status) instead lib/routers/userAPI.js:24:21
 RangeError: Invalid status code: 5
