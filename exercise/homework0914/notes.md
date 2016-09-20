@@ -10,7 +10,7 @@
 | 20160917 | 2h | 完成 PUT /user 和 PUT /album 及 fixed bugs |
 | 20160917 | 1h | fixed bugs |
 | 20160920 | 30min | fixed bugs |
-| 历时4天 | 11h45min+ | Doing... |
+| 历时4天 | 11h45min+ | Done |
 
 ---
 
