@@ -9,7 +9,8 @@
 | 20160916 | 2h15min | 完成 GET ／album 模块 |
 | 20160917 | 2h | 完成 PUT /user 和 PUT /album 及 fixed bugs |
 | 20160917 | 1h | fixed bugs |
-| 历时4天 | 11h15min+ | Doing... |
+| 20160920 | 30min | fixed bugs |
+| 历时4天 | 11h45min+ | Doing... |
 
 ---
 
@@ -190,3 +191,37 @@ Homework0914 is running...
 摇滚 6
 ```
 原因待查。而且该问题不是总能重现，当搜索“摇滚”时出现结果少的问题，而搜索“民谣”时，返回结果是正常的。
+
+##Postman表单Body提交的值为`String`，与原类型不符
+错误代码：
+```
+router.route
+    .put(function(req, res, next) {
+    var id = req.params.id,
+        index = id - 1;
+    if(userModel[index]) {
+        //判断 age 是否为 数值型
+        //console.log(typeof(userModel[index].age));
+        if(typeof(userModel[index].age) === "number") {
+            //获取表单中request.body.age输入的新值，并更新指定用户的年龄age
+            userModel[index].age = req.body.age;
+            res.status(200).send(userModel[index]);
+        } else {
+            res.send("the type of 'age' is not 'number'!");
+        }
+    } else {
+        res.status(404).send('Not Found.');
+    }
+    console.log(typeof(userModel[index].age)); //利用postman表单body提交的age值是String
+})
+```
+说明：
+利用postman表单body提交的age值是`String`，与原数据类型`Number`不符。
+
+修改后代码：
+```
+//获取表单中request.body.age输入的新值，并转为 Number 类型
+//更新指定用户的年龄age
+var newAge = parseInt(req.body.age);
+userModel[index].age = newAge;
+```

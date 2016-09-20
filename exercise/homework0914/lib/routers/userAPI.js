@@ -85,15 +85,17 @@ router.route('/:id')
             //判断 age 是否为 数值型
             //console.log(typeof(userModel[index].age));
             if(typeof(userModel[index].age) === "number") {
-                //获取表单中request.body.age输入的新值，并更新指定用户的年龄age
-                userModel[index].age = req.body.age;
+                //获取表单中request.body.age输入的新值，并转为 Number 类型
+                //更新指定用户的年龄age
+                var newAge = parseInt(req.body.age);
+                userModel[index].age = newAge;
                 res.status(200).send(userModel[index]);
             } else {
                 res.send("the type of 'age' is not 'number'!");
             }
         } else {
             res.status(404).send('Not Found.');
-        }
+        }        
     })
 
 

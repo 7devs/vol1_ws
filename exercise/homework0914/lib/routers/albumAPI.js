@@ -86,9 +86,12 @@ router.route('/:id')
         var id = req.params.id,
             index = id - 1;
         if(albumModel[index]) {
-            //获取表单中 length 和 title 输入的新值，并更新指定唱片的对应数据
-            albumModel[index].length = req.body.length;
-            albumModel[index].title = req.body.title;
+            //获取表单中 length 和 title 输入的新值，length值转为Number
+            //并更新指定唱片的对应数据
+            newLength = parseInt(req.body.length);
+            newTitle = req.body.title
+            albumModel[index].length = newLength;
+            albumModel[index].title = newTitle;
             res.status(200).send(albumModel[index]);
         } else {
             res.status(404).send('Not Found.');
