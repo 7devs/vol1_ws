@@ -1,0 +1,34 @@
+{
+    "button": [
+        {
+            "name": "菜单1",
+            "sub_button": [
+                {
+                    "name": "子菜单",
+                    "type": "click",
+                    "key": "menu1"
+                },
+                {
+                    "name": "拍个照",
+                    "type": "pic_sysphoto",
+                    "key": "sysphoto"
+                },
+                {
+                    "name": "扫个码",
+                    "type": "scancode_push",
+                    "key": "scancode"
+                }
+            ]
+        },
+        {
+            "name": "菜单2",
+            "type": "click",
+            "key": "menu2"
+        },
+        {
+            "name": "更多...",
+            "type": "view",
+            "url": "http://wechatdev.yokeneng.com/"
+        }
+    ]
+}
